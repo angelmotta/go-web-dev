@@ -49,8 +49,7 @@ func request(conn net.Conn) (string, string) {
 			fmt.Printf("*** URL Request: %v ***\n", url)
 		}
 		if ln == "" {
-			// headers are done
-			break
+			break // headers are done
 		}
 		i++
 	}
@@ -74,5 +73,4 @@ func respond(conn net.Conn, method string, url string) {
 		fmt.Fprint(conn, "\r\n") // headers done
 		fmt.Fprint(conn, body)
 	}
-
 }
