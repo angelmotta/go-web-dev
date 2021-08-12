@@ -10,12 +10,12 @@ type hotdog int
 
 // hotdog implicitly implement the Handler Interface
 func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	err := req.ParseForm() // execute ParseForm to access the 'Form' field from the body
+	err := req.ParseForm() // enable access the 'Form' field from the body and also url parameters
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	tpl.ExecuteTemplate(w, "index.gohtml", req.Form) // Form is a aap[string][]string
+	tpl.ExecuteTemplate(w, "index.gohtml", req.Form) // Form is a map[string][]string
 }
 
 var tpl *template.Template
