@@ -14,7 +14,7 @@ func dog (w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	io.WriteString(w,
-		`<!-- not serving from our server -->
+		`<!-- not serving from our server (no route /toby.jpg) -->
 			<!DOCTYPE html>
 			<html lang="en">
 			<head>
