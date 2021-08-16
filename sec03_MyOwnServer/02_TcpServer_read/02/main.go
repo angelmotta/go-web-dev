@@ -15,12 +15,13 @@ func main() {
 	defer li.Close()
 
 	for {
+		fmt.Println("Before Accept")
 		conn, err := li.Accept()
 		if err != nil {
 			log.Println(err)
 			continue
 		}
-		go handle(conn)
+		handle(conn)
 	}
 }
 
